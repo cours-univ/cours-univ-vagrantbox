@@ -10,7 +10,7 @@ vagrantfile-local:
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                k9xHgHsBaBGe:
+                Ie8zr3P9qvQE:
                     host: '5260'
                     guest: '22'
         post_up_message: ''
@@ -32,7 +32,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            ljBCRdfFMeFO:
+            WGW1n00Jold3:
                 owner: www-data
                 group: www-data
                 source: ./cours-univ-www
@@ -63,7 +63,9 @@ vagrantfile-local:
         host: detect
 server:
     install: '1'
-    packages: {  }
+    packages:
+        - vim
+        - htop
 users_groups:
     install: '1'
     groups: {  }
@@ -87,7 +89,7 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        8fenoz5on7nr:
+        8hcrkbrft6nb:
             servername: cours-univ.dev
             serveraliases:
                 - www.cours-univ.dev
@@ -97,9 +99,9 @@ apache:
                 - 'APP_ENV dev'
             custom_fragment: ''
             directories:
-                nlpnrkvnefjm:
+                9uicdsnew1yh:
                     provider: directory
-                    path: /var/www/cours-univ
+                    path: /var/www/cours-univ-www
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -110,7 +112,7 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     files_match:
-                        wcvhufh52mii:
+                        1s6yjfks1vua:
                             provider: filesmatch
                             path: \.php$
                             sethandler: 'proxy:fcgi://127.0.0.1:9000'
@@ -127,7 +129,7 @@ nginx:
         proxy_buffers: '4 256k'
     upstreams: {  }
     vhosts:
-        4oo3yaps5fsa:
+        huyzt01xt1a7:
             proxy: ''
             server_name: cours-univ.dev
             www_root: /var/www
@@ -139,7 +141,7 @@ nginx:
                 - web/app.php
             client_max_body_size: 1m
             locations:
-                ya4r8h0qqtrs:
+                ztprozpjpua2:
                     location: /
                     try_files:
                         - $uri
@@ -148,7 +150,7 @@ nginx:
                     fastcgi: ''
                     fastcgi_index: ''
                     fastcgi_split_path: ''
-                uqrh8wcv1qql:
+                wvvbgitef6jb:
                     location: '~ \.php$'
                     try_files:
                         - $uri
@@ -167,7 +169,7 @@ nginx:
 php:
     install: '1'
     settings:
-        version: '56'
+        version: '54'
     fpm_settings:
         port: 9000
     composer: '1'
@@ -234,15 +236,15 @@ mysql:
         override_options: {  }
     adminer: 0
     users:
-        A0EL2Yqs00Ko:
+        FxHyKajhnXQR:
             name: dbuser
             password: '123'
     databases:
-        L74Gv4oCQidj:
+        bEJDsTLYKQEe:
             name: dbname
             sql: ''
     grants:
-        XeYIhrRtQr34:
+        D2aV5aNaXGTE:
             user: dbuser
             table: '*.*'
             privileges:
@@ -254,15 +256,12 @@ postgresql:
             encoding: UTF8
             version: '9.3'
         server:
-            postgres_password: '123'
+            postgres_password: vagrant
     databases:
-        wRrtKZ6yUzeh:
+        FOrfV8sVwRzz:
             dbname: silex
-            owner: vagrant
-    users:
-        UvDwGRDejMA8:
-            username: vagrant
-            password: vagrant
+            owner: ''
+    users: {  }
     grants: {  }
     adminer: 0
 sqlite:
