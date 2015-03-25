@@ -10,6 +10,7 @@
 ```
 git clone https://github.com/cours-univ/cours-univ-vagrantbox.git
 cd cours-univ-vagrantbox
+git clone https://github.com/cours-univ/cours-univ-www.git
 vagrant up
 ```
 
