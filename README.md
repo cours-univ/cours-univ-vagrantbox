@@ -8,7 +8,7 @@
 ## Install
 
 ```
-git clone --recursive https://github.com/cours-univ/cours-univ-vagrantbox.git
+git clone https://github.com/cours-univ/cours-univ-vagrantbox.git
 cd cours-univ-vagrantbox
 vagrant up
 ```
