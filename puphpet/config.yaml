@@ -8,7 +8,7 @@ vagrantfile-local:
         cpus: '1'
         chosen_provider: virtualbox
         network:
-            private_network: 192.168.56.102
+            private_network: 192.168.56.101
             forwarded_port:
                 Ie8zr3P9qvQE:
                     host: '5260'
