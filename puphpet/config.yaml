@@ -81,7 +81,7 @@ apache:
     settings:
         user: www-data
         group: www-data
-        default_vhost: true
+        default_vhost: false
         manage_user: false
         manage_group: false
         sendfile: 0
@@ -90,9 +90,7 @@ apache:
         - rewrite
     vhosts:
         8hcrkbrft6nb:
-            servername: cours-univ.dev
-            serveraliases:
-                - www.cours-univ.dev
+            servername: default
             docroot: /var/www/cours-univ-www/web
             port: '80'
             setenv:
